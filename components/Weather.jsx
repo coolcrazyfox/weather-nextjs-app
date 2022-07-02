@@ -4,6 +4,7 @@ import React from 'react';
 const Weather = ({ data }) => {
   console.log(data);
   let temperatureCelsius = Math.floor(((data.main.temp.toFixed(0))-32)*5/9)
+    let temperatureFahrenheit = data.main.temp.toFixed(0)
   return (
     <div className='relative flex flex-col justify-between max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10'>
       {/* Top */}
@@ -18,7 +19,7 @@ const Weather = ({ data }) => {
           <p className='text-2xl'>{data.weather[0].main}</p>
         </div>
         <p className='text-9xl'>{temperatureCelsius}&#176;C</p>
-        <p className='text-9xl'>{temperatureCelsius}&#176;F</p>
+        <p className='text-9xl'>{temperatureFahrenheit}&#176;F</p>
       </div>
       {/* Bottom */}
 

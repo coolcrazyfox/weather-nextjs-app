@@ -11,8 +11,8 @@ const Weather = ({ data }) => {
           <Image
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
             alt='/'
-            width='100'
-            height='100'
+            width='110'
+            height='110'
           />
           <p className='text-2xl'>{data.weather[0].main}</p>
         </div>

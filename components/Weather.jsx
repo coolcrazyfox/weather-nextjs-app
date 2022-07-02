@@ -3,20 +3,22 @@ import React from 'react';
 
 const Weather = ({ data }) => {
   console.log(data);
+  let temperatureCelsius = Math.floor(((data.main.temp.toFixed(0))-32)*5/9)
   return (
     <div className='relative flex flex-col justify-between max-w-[500px] w-full h-[90vh] m-auto p-4 text-gray-300 z-10'>
       {/* Top */}
-      <div className='relative flex justify-between pt-12'>
-        <div className='flex flex-col items-center'>
+      <div className='relative flex justify-between pt-12 '>
+        <div className='flex flex-col items-center '>
           <Image
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
             alt='/'
-            width='110'
-            height='110'
+            width='100'
+            height='100'
           />
           <p className='text-2xl'>{data.weather[0].main}</p>
         </div>
-        <p className='text-9xl'>{data.main.temp.toFixed(0)}&#176;</p>
+        <p className='text-9xl'>{temperatureCelsius}&#176;C</p>
+        <p className='text-9xl'>{temperatureCelsius}&#176;F</p>
       </div>
       {/* Bottom */}
 

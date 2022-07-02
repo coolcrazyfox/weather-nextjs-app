@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-const Weather = ({ data }) => {
+const Weather = ({ data, coords }) => {
+  console.log(coords);
   console.log(data);
   let temperatureCelsius = Math.floor(((data.main.temp.toFixed(0))-32)*5/9)
   let temperatureFahrenheit = data.main.temp.toFixed(0)
